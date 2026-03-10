@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f4f6f8;
+            padding:30px;
+        }
+
+        .container{
+            background:white;
+            padding:30px;
+            border-radius:8px;
+            max-width:500px;
+            margin:auto;
+        }
+
+        input{
+            width:100%;
+            padding:8px;
+            margin:10px 0;
+        }
+
+        button{
+            padding:8px 15px;
+            background:#28a745;
+            color:white;
+            border:none;
+        }
+
+        a{
+            margin-left:10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Cập nhật sinh viên</h2>
+
+    <form th:action="@{/students/update}" method="post">
+
+        <input type="hidden" name="id" th:value="${student.id}">
+
+        <label>Tên</label>
+        <input type="text" name="name" th:value="${student.name}" required>
+
+        <label>Email</label>
+        <input type="email" name="email" th:value="${student.email}" required>
+
+        <label>Tuổi</label>
+        <input type="number" name="age" th:value="${student.age}" required>
+
+        <button type="submit">Update</button>
+
+        <a th:href="@{/students}">Cancel</a>
+
+    </form>
+
+</div>
+
+</body>
+</html>

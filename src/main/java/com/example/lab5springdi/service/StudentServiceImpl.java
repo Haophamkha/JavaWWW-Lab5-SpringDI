@@ -34,5 +34,9 @@ public class StudentServiceImpl implements StudentService {
         return repository.findByNameContaining(name);
     }
 
+    @Override
+    public void deleteById(Integer id) {
+        repository.deleteById(id);
+    }
 }
 
